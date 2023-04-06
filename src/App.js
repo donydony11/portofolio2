@@ -19,7 +19,7 @@ const App = () => {
   <div className='overflow-hidden'>
     <Contact />
   </div>
-  <div className='h-[4000px]'></div>
+  <div className='max-h-screen'></div>
 </div>
 
   )
