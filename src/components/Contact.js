@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
-import { API } from 'aws-amplify';
-import { Auth } from 'aws-amplify';
 
-const Contact = () => {
+const Contact = () =>{
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,40 +12,31 @@ const Contact = () => {
   const { name, email, message } = formData;
 
   const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const user = await Auth.currentAuthenticatedUser();
-      const token = user.signInUserSession.accessToken.jwtToken;
-
-      await API.post('contactformapi', '/items', {
+      const response = await fetch('https://formspree.io/f/xknaqdzr', {
+        method: 'POST',
         headers: {
-          Authorization: `Bearer ${token}`
-        },
-        body: formData
-      });
-      await API.post('contactformapi', '/send', {
-        headers: {
-          Authorization: `Bearer ${token}`
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(formData)
       });
-      alert('Message sent successfully!');
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
-    } catch (err) {
-      console.log(err);
-      alert('An error occurred while sending your message.');
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      alert('Thank you for contacting us!');
+      setFormData({ name: '', email: '', message: '' });
+
+    } catch (error) {
+      console.log(error);
+      alert('Sorry, there was an error submitting your form.');
     }
   };
 
@@ -70,12 +59,12 @@ const Contact = () => {
           </motion.div>
           {/* form */}
           <motion.form
+            onSubmit={handleSubmit}
             variants={fadeIn('left', 0.3)}
             initial='hidden'
             whileInView='show'
             viewport={{ once: false, amount: 0.3 }}
             className='flex-1 border rounded-2x1 flex flex-col gap-y-6 pb-24 p-6 items-start'
-            onSubmit={handleSubmit}
           >
             <input
               className='bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all'
@@ -108,7 +97,5 @@ const Contact = () => {
     </section>
   );
 };
-
-
 
 export default Contact;

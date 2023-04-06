@@ -83,12 +83,6 @@ I'm excited about the future of web development and can't wait to see where my c
             </div>
           </div>
         </div>
-        <div className='flex gap-x-8 items-center'>
-          <button className='btn btn-lg '>Contact me</button>
-          <a href='#' className='text-gradient btn-link'>
-            My Portofolio
-          </a>
-        </div>
         </motion.div>
       </div>
     </div>

@@ -26,7 +26,6 @@ const Work = () => {
                 Work.
               </h2>
               <p className="max-w-sm mb-16">Take a look at some of my latest projects that showcase my skills in web development. From building responsive layouts to integrating dynamic features, these projects demonstrate my ability to create engaging and functional websites.</p>
-              <button className="btn btn-sm">View all projects</button>
             </div>
               <motion.div
               variants={fadeIn('right', 0.3)}

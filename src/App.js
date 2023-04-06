@@ -11,14 +11,17 @@ import Contact from './components/Contact';
 const App = () => {
   return (
     <div className='bg-site bg-no-repeat bg-cover overflow-hidden'>
-      <Header />
-      <Banner />
-      <Nav />
-      <About />
-      <Work />
-      <Contact />
-      <div className='h-[4000px]'></div>
-    </div>
+  <Header />
+  <Banner />
+  <Nav />
+  <About />
+  <Work />
+  <div className='overflow-hidden'>
+    <Contact />
+  </div>
+  <div className='h-[4000px]'></div>
+</div>
+
   )
 }
 

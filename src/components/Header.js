@@ -1,4 +1,5 @@
 import React from 'react'
+import Contact  from "./Contact"
 
 import Logo from '../assets/logo.png'
 
@@ -11,7 +12,8 @@ const Header = () => {
         <img src={Logo} alt='Logo' className='w-100% h-100% mr-[200px]' />
         </a>
 
-        <button className='btn btn-sm'>Work with me</button>
+        <button className='btn btn-lg cursor-pointer' onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Work with me</button>
+
       </div> 
 
   </div>

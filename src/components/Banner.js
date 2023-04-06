@@ -55,13 +55,13 @@ repeat={Infinity}
     variants={fadeIn('up', 0.7)} initial='hidden' whileInView={'show'}
     viewport={{ once: false, ammount: 0.7}}
      className='flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0'>
-      <a href='https://www.instagram.com/_denisss06_/' target='_blank'>
+      <a href='https://www.instagram.com/_denisss06_/' target='_blank' rel="noreferrer">
         <FaInstagram/>
       </a>
-      <a href='https://github.com/donydony11' target='_blank'>
+      <a href='https://github.com/donydony11' target='_blank' rel="noreferrer">
         <FaGithub/>
       </a>
-      <a href='https://www.linkedin.com/in/denisstolnicu/' target='_blank'>
+      <a href='https://www.linkedin.com/in/denisstolnicu/' target='_blank' rel="noreferrer">
         <FaLinkedin/>
       </a>
     </motion.div>
