@@ -29,7 +29,7 @@ const About = () => {
         viewport={{once: false, amount: 0.3}}
         className='flex-1'>
           <h2 className='h2 text-accent'>About me.</h2>
-          <h3 className='h3 mb-4'>I'm a Front-end Developer with 1 year of experience(non-professional). 
+          <h3 className='h3 mb-4'>I'm a Front-end Developer with 1 year of experience (non-professional). 
           </h3>
           <p className='mb-6'>Hi there! My name is Denis, and I'm a Frontend Developer currently studying Computer Science. With 1 year of experience in web development, I'm excited to share my passion for coding with others.
 
